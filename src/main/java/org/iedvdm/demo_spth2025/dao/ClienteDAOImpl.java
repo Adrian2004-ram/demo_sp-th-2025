@@ -49,7 +49,32 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     @Override
     public Optional<Cliente> find(int id) {
-        return Optional.empty();
+
+        Cliente cliente = jdbcTemplate.queryForObject("""
+            select *
+            from cliente 
+            where id = ?
+            """,
+            (rs, rowNum) -> Cliente.builder()
+                    .id(rs.getInt("id"))
+                    .nombre(rs.getString("nombre"))
+                    .apellido1(rs.getString("apellido1"))
+                    .apellido2(rs.getString("apellido2"))
+                    .ciudad(rs.getString("ciudad"))
+                    .categoria(rs.getInt("categoría"))
+                    .build()
+            ,
+            id
+        );
+
+        if (cliente != null) {
+            return Optional.of(cliente);
+
+        } else {
+            return Optional.empty();
+        }
+
+
     }
 
     @Override

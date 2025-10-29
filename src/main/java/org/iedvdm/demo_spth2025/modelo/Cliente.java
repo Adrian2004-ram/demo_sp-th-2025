@@ -1,10 +1,12 @@
 package org.iedvdm.demo_spth2025.modelo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
+@Builder
 public class Cliente {
     private int id;
     private String nombre;
@@ -12,4 +14,7 @@ public class Cliente {
     private String apellido2;
     private String ciudad;
     private int categoria;
+
+
+
 }

@@ -1,10 +1,18 @@
 package org.iedvdm.demo_spth2025;
 
+import org.iedvdm.demo_spth2025.dao.ClienteDAO;
+import org.iedvdm.demo_spth2025.modelo.Cliente;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
-class DdemoSpTh2025ApplicationTests {
+public class DdemoSpTh2025ApplicationTests {
+
+    @Autowired
+    ClienteDAO clienteDAO;
 
     @Test
     void contextLoads() {
@@ -25,5 +33,15 @@ class DdemoSpTh2025ApplicationTests {
             .collect(java.util.stream.Collectors.joining(","));
         System.out.println(out);
     }
+
+    @Test
+    public void comprueba() {
+
+        List<Cliente> list = clienteDAO.getAll();
+
+        list.forEach(System.out::println);
+
+    }
+
 
 }
