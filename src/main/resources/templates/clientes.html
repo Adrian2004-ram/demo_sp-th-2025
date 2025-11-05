@@ -1,0 +1,18 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<!--th:each es coo un for each-->
+    <div th:each="client : ${listaClientes}">
+
+        <span th:text="${client.nombre}"/>
+        <span th:text="${client.apellido1}"/>
+        <span th:text="${client.apellido2}"/>
+
+    </div>
+</body>
+</html>

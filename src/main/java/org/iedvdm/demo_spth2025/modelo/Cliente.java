@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-@Data
-@AllArgsConstructor
+@Data //crea los getter, setter, etc
+@AllArgsConstructor // crea el constructor
 @Builder
 public class Cliente {
     private int id;
