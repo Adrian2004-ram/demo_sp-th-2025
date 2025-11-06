@@ -2,7 +2,6 @@ package org.iedvdm.demo_spth2025.controler;
 
 import org.iedvdm.demo_spth2025.modelo.Cliente;
 import org.iedvdm.demo_spth2025.sercicio.ClienteService;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -27,7 +26,7 @@ public class ClienteControler {
 
         model.addAttribute("listaClientes", clienteList);
 
-        return "clientes";
+        return "clientes";// devuelve el html del templates, despues de cargar el model con los atributos
     }
 
 }

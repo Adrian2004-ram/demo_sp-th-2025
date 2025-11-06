@@ -6,14 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-<!--th:each es coo un for each-->
-<h1>clintes</h1>
-    <div th:each="client : ${listaClientes}">
 
-        <span th:text="${client.nombre}"/>
-        <span th:text="${client.apellido1}"/>
-        <span th:text="${client.apellido2}"/>
-
+    <div th:each="escritor: ${escritores}">
+        <div>
+            <p th:text="${escritor.nombre}">Escritor</p>
+        </div>
     </div>
+
 </body>
 </html>
